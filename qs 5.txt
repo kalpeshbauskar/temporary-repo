@@ -1,5 +1,4 @@
-Q5. Stack Using Singly Linked List
-
+Q5.	Implement a Stack ADT using a singly linked list with push, pop, and display operations. Handle stack underflow.
 Language: C++
 
 Code:
