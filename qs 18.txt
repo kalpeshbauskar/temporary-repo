@@ -1,4 +1,4 @@
-Q18. Naive String Matching
+18.	A text string text of length n. A pattern string pattern of length m. Find all starting indices i in the text such that the substring text[i:i+m] is exactly equal to the pattern using the Naive String Matching Algorithm approach. Constraints: 0 ≤ m ≤ n
 
 Language: Python
 
