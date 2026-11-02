@@ -1,4 +1,4 @@
-Q13. Kruskal's Algorithm Using Adjacency List
+13.	Represent a graph of your college campus using adjacency list. Implement Kruskal’s algorithm to find its Minimum Spanning Tree and display selected edges and total weight.
 
 Language: Python
 
