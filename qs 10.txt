@@ -1,4 +1,4 @@
-Q10. BST Insertion and Search
+Q10. implement insertion and search operations in a BST. Display whether a given key is present.
 
 Language: Python
 
