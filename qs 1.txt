@@ -1,4 +1,4 @@
-Q1. Student Database Using Dynamic Memory Allocation and Linear Search
+Q1.	Create a student database containing Student ID, Name, and CGPA. Allocate memory dynamically, add student records, and search for a student using ID with Linear Search.
 
 Language: C++
 
