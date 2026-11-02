@@ -1,5 +1,4 @@
-Q7. Infix to Prefix Conversion Using Stack
-
+Q7.	Implement a stack using an array and convert a valid infix expression into prefix notation.
 Language: C++
 
 Code:
