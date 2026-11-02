@@ -1,4 +1,4 @@
-Q4. Binary Search on Sorted Student IDs (same statement as Q2)
+4.	Store student IDs in an array, sort them in ascending order, and implement Binary Search to find a given student ID.
 
 Language: C++
 
