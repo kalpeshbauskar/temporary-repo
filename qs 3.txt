@@ -1,5 +1,4 @@
-Q3. Sort Student Records by CGPA Using Selection Sort
-
+3.	Store student ID, name, and CGPA. Implement Bubble Sort or Selection Sort to arrange records by CGPA in ascending order.
 Language: C++
 
 Code:
