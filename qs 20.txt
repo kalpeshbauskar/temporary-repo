@@ -1,5 +1,4 @@
-Q20. A* Search Using Manhattan Distance
-
+20.	Implement A* search for a small grid maze using Manhattan distance as the heuristic. Display the path from start to goal.
 Language: Python
 
 Code:
