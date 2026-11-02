@@ -1,4 +1,4 @@
-Q16. Merge Sort
+16.	You are given a list of online orders, each with an estimated delivery time in minutes. Write a program to sort these orders using the Merge Sort algorithm so the delivery system can prioritize quicker deliveries first.
 
 Language: Python
 
