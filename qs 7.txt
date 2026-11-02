@@ -1,0 +1,79 @@
+Q7. Infix to Prefix Conversion Using Stack
+
+Language: C++
+
+Code:
+#include <iostream>
+#include <stack>
+#include <algorithm>
+#include <cctype>
+using namespace std;
+
+int priority(char ch) {
+    if (ch == '+' || ch == '-')
+        return 1;
+    if (ch == '*' || ch == '/')
+        return 2;
+    return 0;
+}
+
+int main() {
+    string s, result = "";
+    stack<char> st;
+
+    cout << "Enter infix expression: ";
+    cin >> s;
+
+    reverse(s.begin(), s.end());
+
+    // Swap opening and closing brackets
+    for (int i = 0; i < s.length(); i++) {
+        if (s[i] == '(')
+            s[i] = ')';
+        else if (s[i] == ')')
+            s[i] = '(';
+    }
+
+    for (int i = 0; i < s.length(); i++) {
+        char ch = s[i];
+
+        if (isalnum(ch))
+            result += ch;
+        else if (ch == '(')
+            st.push(ch);
+        else if (ch == ')') {
+            while (!st.empty() && st.top() != '(') {
+                result += st.top();
+                st.pop();
+            }
+            if (!st.empty())
+                st.pop();
+        }
+        else {
+            while (!st.empty() &&
+                   priority(st.top()) > priority(ch)) {
+                result += st.top();
+                st.pop();
+            }
+            st.push(ch);
+        }
+    }
+
+    while (!st.empty()) {
+        result += st.top();
+        st.pop();
+    }
+
+    reverse(result.begin(), result.end());
+
+    cout << "Prefix: " << result;
+    return 0;
+}
+
+Sample Input:
+A+B*C
+
+Sample Output:
+Prefix: +A*BC
+
+Note: These beginner versions assume valid expressions, single-character operands, and the operators +, -, * and /.

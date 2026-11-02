@@ -1,0 +1,73 @@
+Q20. A* Search Using Manhattan Distance
+
+Language: Python
+
+Code:
+maze = [
+    [0, 0, 1, 0],
+    [1, 0, 1, 0],
+    [0, 0, 0, 0],
+    [0, 1, 1, 0]
+]
+
+start = (0, 0)
+goal = (3, 3)
+
+def heuristic(a, b):
+    return abs(a[0] - b[0]) + abs(a[1] - b[1])
+
+open_list = [start]
+g = {start: 0}
+parent = {}
+found = False
+
+while open_list:
+    current = min(
+        open_list,
+        key=lambda x: g[x] + heuristic(x, goal)
+    )
+    open_list.remove(current)
+
+    if current == goal:
+        found = True
+        break
+
+    x, y = current
+    moves = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+    for dx, dy in moves:
+        nx = x + dx
+        ny = y + dy
+        next_cell = (nx, ny)
+
+        if (0 <= nx < len(maze) and
+            0 <= ny < len(maze[0]) and
+            maze[nx][ny] == 0):
+            new_g = g[current] + 1
+            if next_cell not in g or new_g < g[next_cell]:
+                g[next_cell] = new_g
+                parent[next_cell] = current
+                if next_cell not in open_list:
+                    open_list.append(next_cell)
+
+if found:
+    path = []
+    current = goal
+    while current != start:
+        path.append(current)
+        current = parent[current]
+    path.append(start)
+    path.reverse()
+    print("Path:", path)
+    print("Path Length:", g[goal])
+else:
+    print("No Path Exists")
+
+Sample Input:
+Maze and start/goal are defined in the program.
+Start = (0, 0), Goal = (3, 3)
+
+Sample Output:
+Path: [(0, 0), (0, 1), (1, 1), (2, 1), (2, 2), (2, 3), (3, 3)]
+Path Length: 6
+
+Grid values: 0 = free cell, 1 = obstacle. Start = (0, 0), Goal = (3, 3).

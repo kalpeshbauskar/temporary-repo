@@ -1,0 +1,58 @@
+Q1. Student Database Using Dynamic Memory Allocation and Linear Search
+
+Language: C++
+
+Code:
+#include <iostream>
+using namespace std;
+
+struct Student {
+    int id;
+    string name;
+    float cgpa;
+};
+
+int main() {
+    int n;
+    cout << "Enter number of students: ";
+    cin >> n;
+
+    Student *s = new Student[n];
+
+    for (int i = 0; i < n; i++) {
+        cout << "Enter ID, Name and CGPA: ";
+        cin >> s[i].id >> s[i].name >> s[i].cgpa;
+    }
+
+    int key;
+    cout << "Enter ID to search: ";
+    cin >> key;
+
+    bool found = false;
+
+    // Linear search
+    for (int i = 0; i < n; i++) {
+        if (s[i].id == key) {
+            cout << "Student Found\n";
+            cout << s[i].name << " " << s[i].cgpa;
+            found = true;
+            break;
+        }
+    }
+
+    if (!found)
+        cout << "Student Not Found";
+
+    delete[] s;
+    return 0;
+}
+
+Sample Input:
+2
+101 Rahul 8.5
+102 Amit 9.0
+102
+
+Sample Output:
+Student Found
+Amit 9

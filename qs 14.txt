@@ -1,0 +1,54 @@
+Q14. Prim's Algorithm Using Adjacency Matrix
+
+Language: Python
+
+Code:
+n = int(input("Enter number of vertices: "))
+print("Enter adjacency matrix:")
+graph = []
+for i in range(n):
+    row = list(map(int, input().split()))
+    graph.append(row)
+
+visited = [False] * n
+visited[0] = True
+total = 0
+
+print("MST Edges:")
+for i in range(n - 1):
+    minimum = 999
+    x = -1
+    y = -1
+    for j in range(n):
+        if visited[j]:
+            for k in range(n):
+                if not visited[k] and graph[j][k] != 0:
+                    if graph[j][k] < minimum:
+                        minimum = graph[j][k]
+                        x = j
+                        y = k
+    if x == -1:
+        print("Graph is disconnected")
+        break
+    print(x, "-", y, ":", minimum)
+    visited[y] = True
+    total += minimum
+
+if all(visited):
+    print("Total Weight:", total)
+
+Sample Input:
+4
+0 10 6 5
+10 0 0 15
+6 0 0 4
+5 15 4 0
+
+Sample Output:
+MST Edges:
+0 - 3 : 5
+3 - 2 : 4
+0 - 1 : 10
+Total Weight: 19
+
+Zero in the matrix means no edge. This version starts from vertex 0.

@@ -1,0 +1,55 @@
+Q12. Find BST Depth and Display Leaf Nodes
+
+Language: Python
+
+Code:
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+def insert(root, data):
+    if root is None:
+        return Node(data)
+    if data < root.data:
+        root.left = insert(root.left, data)
+    elif data > root.data:
+        root.right = insert(root.right, data)
+    return root
+
+def depth(root):
+    if root is None:
+        return 0
+    return 1 + max(depth(root.left), depth(root.right))
+
+def leaf(root):
+    if root:
+        if root.left is None and root.right is None:
+            print(root.data, end=" ")
+        leaf(root.left)
+        leaf(root.right)
+
+root = None
+n = int(input("Enter number of nodes: "))
+for i in range(n):
+    root = insert(root, int(input()))
+
+print("Depth:", depth(root))
+print("Leaf Nodes:")
+leaf(root)
+
+Sample Input:
+5
+50
+30
+70
+20
+40
+
+Sample Output:
+Depth: 3
+Leaf Nodes:
+20 40 70
+
+Depth is counted as the number of levels; a one-node tree has depth 1.

@@ -1,0 +1,45 @@
+Q17. Fractional Knapsack
+
+Language: Python
+
+Code:
+n = int(input("Enter number of parcels: "))
+weight = []
+profit = []
+
+for i in range(n):
+    w, p = map(int, input().split())
+    weight.append(w)
+    profit.append(p)
+
+capacity = int(input("Enter truck capacity: "))
+
+# Store profit/weight ratio with each parcel
+ratio = []
+for i in range(n):
+    ratio.append((profit[i] / weight[i], weight[i], profit[i]))
+
+# Highest profit per unit weight first
+ratio.sort(reverse=True)
+
+total = 0
+for r, w, p in ratio:
+    if capacity >= w:
+        total += p
+        capacity -= w
+    else:
+        total += r * capacity
+        capacity = 0
+        break
+
+print("Maximum Profit:", total)
+
+Sample Input:
+3
+10 60
+20 100
+30 120
+50
+
+Sample Output:
+Maximum Profit: 240.0
