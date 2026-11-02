@@ -1,4 +1,4 @@
-Q8. Circular Queue Using Array of Size 5
+Q8.	Implement a Circular Queue of using an array of size 5 in C++. Write a program to perform Enqueue, Dequeue, and Display operations. Handle full and empty queue conditions.
 
 Language: C++
 
