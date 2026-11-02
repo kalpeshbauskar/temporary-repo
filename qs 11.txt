@@ -1,4 +1,4 @@
-Q11. BST Deletion
+Q11. 	Implement deletion of a specified key from a BST, handling leaf nodes, nodes with one child, and nodes with two children.
 
 Language: Python
 
