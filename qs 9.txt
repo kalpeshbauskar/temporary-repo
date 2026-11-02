@@ -1,4 +1,4 @@
-Q9. BST Insertion and Tree Traversals
+Q9.	Create a BST by inserting integer values. Display inorder, preorder, and postorder traversals. Handle duplicate values according to a defined rule.
 
 Language: Python
 
