@@ -1,5 +1,4 @@
-Q6. Infix to Postfix Conversion Using Stack
-
+Q6.	Implement a stack using an array and convert a valid infix expression into postfix notation, considering operator precedence and parentheses.
 Language: C++
 
 Code:
