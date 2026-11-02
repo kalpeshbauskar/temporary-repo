@@ -1,4 +1,4 @@
-Q14. Prim's Algorithm Using Adjacency Matrix
+Q14. 	Represent a graph of your college campus using adjacency matrix. Implement Prim’s algorithm to find the Minimum Spanning Tree and calculate its total weight.
 
 Language: Python
 
