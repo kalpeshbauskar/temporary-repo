@@ -1,5 +1,4 @@
-Q19. BFS Maze: Shortest Path
-
+Q19.	Represent a small maze as a two-dimensional grid containing free cells and obstacles. Use Breadth-First Search (BFS) to find the shortest path from a start cell to a goal cell. Display the path or report that no path exists.
 Language: Python
 
 Code:
