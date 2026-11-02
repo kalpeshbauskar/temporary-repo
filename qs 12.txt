@@ -1,5 +1,4 @@
-Q12. Find BST Depth and Display Leaf Nodes
-
+Q12. Find the depth of a BST and display all leaf nodes.
 Language: Python
 
 Code:
