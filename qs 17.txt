@@ -1,5 +1,4 @@
-Q17. Fractional Knapsack
-
+17.	You run a shipping company and need to load a truck with parcels of different weights and profits. The truck has a limited weight capacity. Write a program to choose parcels (even partially) to maximize profit using the Fractional Knapsack strategy.
 Language: Python
 
 Code:
